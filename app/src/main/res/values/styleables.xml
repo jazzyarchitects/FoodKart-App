@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CapitalTextView">
+        <attr name="focusAllWords" format="boolean" />
+        <attr name="letterScaleFactor" format="integer" />
+    </declare-styleable>
+
+</resources>

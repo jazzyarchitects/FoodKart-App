@@ -36,13 +36,13 @@ public class CapitalTextView extends TextView {
     public void init(AttributeSet attributeSet) {
         TypedArray a = mContext.obtainStyledAttributes(attributeSet, R.styleable.CapitalTextView);
         if (attributeSet != null) {
-            scaleFactor = a.getInt(R.styleable.CapitalTextView_letterScaleFactor, 1)-1;
+            scaleFactor = a.getInt(R.styleable.CapitalTextView_letterScaleFactor, 1) - 1;
             scaleAllWords = a.getBoolean(R.styleable.CapitalTextView_focusAllWords, false);
             thisText = this.getText().toString();
             thisText = thisText.toUpperCase();
             String[] strings = thisText.split(" ");
             String finalString = "";
-            for (int i=0;i<strings.length;i++) {
+            for (int i = 0; i < strings.length; i++) {
                 String string = strings[i];
                 int k = 0;
                 int protection = 0;
@@ -50,26 +50,26 @@ public class CapitalTextView extends TextView {
                 do {
                     c = string.charAt(k);
                     int asciiIndex = (int) c;
-                    if (asciiIndex <= (int) 'Z' && asciiIndex >= (int) 'A') {
+                    if ((asciiIndex <= (int) 'Z' && asciiIndex >= (int) 'A') || (asciiIndex >= (int) '0' && asciiIndex <= (int) '9')) {
                         break;
                     }
                     k++;
                     protection++;
                 } while (protection <= 100);
-                if(i==0 || (i>0 && scaleAllWords)) {
-                    String startTag="";
-                    String endTag="";
-                    for(int j=0;j<scaleFactor;j++){
-                        startTag+="<big>";
-                        endTag+="</big>";
+                if (i == 0 || (i > 0 && scaleAllWords)) {
+                    String startTag = "";
+                    String endTag = "";
+                    for (int j = 0; j < scaleFactor; j++) {
+                        startTag += "<big>";
+                        endTag += "</big>";
                     }
                     finalString += startTag + string.toCharArray()[0] + endTag;
 //                finalString += "<font size=\"" + scaleFactor * this.getTextSize() + "px\">" + string.toCharArray()[0] + "</font>";
                     for (int j = 1; j < string.length(); j++) {
                         finalString += string.charAt(j);
                     }
-                }else{
-                    finalString+=string;
+                } else {
+                    finalString += string;
                 }
                 finalString += " ";
             }

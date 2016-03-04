@@ -8,5 +8,12 @@
     <color name="secondary_text">#727272</color>
     <color name="icons">#FFFFFF</color>
     <color name="divider">#B6B6B6</color>
-    <color name="checkoutItemTextColor">#444444</color>
+    <color name="checkoutItemTextColor">#222</color>
+
+    <color name="admin">#F0F0F0</color>
+    <color name="ADD">#FF0000</color>
+    <color name="ADDTEXT">#FFFFFF</color>
+    <color name="accept">#00ff00</color>
+    <color name="Details">#e60000</color>
+
 </resources>

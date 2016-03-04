@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        card_view:cardElevation="15dp"
+        card_view:cardCornerRadius="3dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/restName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:paddingLeft="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="accepting member"
+                android:background="@color/accept"
+                android:textColor="@color/ADDTEXT"
+                android:layout_marginLeft="250dp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Order time :"
+                android:textSize="16dp"
+                android:paddingLeft="10dp"
+                android:layout_marginTop="35dp"/>
+
+            <TextView
+                android:id="@+id/orderTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:layout_marginLeft="120dp"
+                android:textSize="16dp"/>
+
+            <android.support.v7.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="65dp"
+                card_view:cardBackgroundColor="@color/admin">
+
+                <TextView
+                    android:id="@+id/orderedBy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:paddingLeft="10dp"/>
+                <TextView
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:paddingLeft="10dp"/>
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:id="@+id/curTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:textSize="16dp"
+                android:text="current total"
+                android:layout_marginTop="120dp"/>
+            <TextView
+                android:id="@+id/tarAmt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:textSize="16dp"
+                android:text="Target Amount"
+                android:layout_marginTop="140dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Order Details"
+                android:textSize="23dp"
+                android:paddingLeft="10dp"
+                android:layout_marginTop="170dp"/>
+            <Button
+                android:id="@+id/details"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginTop="170dp"
+                android:text="Details"
+                android:layout_marginLeft="260dp"
+                android:textColor="@color/ADDTEXT"
+                android:background="@color/Details"/>
+
+            <phoenix.hackfest.orderit.CustomViews.CheckoutList
+                android:layout_width="match_parent"
+                android:layout_height="270dp"
+                android:id="@+id/checkoutList"
+                android:layout_below="@+id/details"
+                android:layout_marginTop="10dp" />
+
+            <android.support.v7.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:cardElevation="10dp"
+                android:id="@+id/bottomCardView"
+                card_view:cardCornerRadius="3dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="500dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:textSize="16dp"
+                    android:text="My order: "/>
+
+                <EditText
+                    android:id="@+id/item"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:background="@color/admin"
+                    android:hint="Item"
+                    android:layout_marginLeft="85dp"/>
+
+                <EditText
+                    android:id="@+id/qty"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:textSize="16dp"
+                    android:background="@color/admin"
+                    android:hint="Qty"
+                    android:layout_marginLeft="230dp"/>
+
+                <EditText
+                    android:id="@+id/cost"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:textSize="16dp"
+                    android:background="@color/admin"
+                    android:hint="Cost"
+                    android:layout_marginLeft="285dp"/>
+
+                <Button
+                    android:id="@+id/add"
+                    android:layout_width="100dp"
+                    android:layout_height="25dp"
+                    android:text="ADD"
+                    android:background="@color/ADD"
+                    android:textColor="@color/ADDTEXT"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginLeft="235dp"/>
+
+            </android.support.v7.widget.CardView>
+
+
+
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

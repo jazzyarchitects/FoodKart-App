@@ -1,4 +1,4 @@
-package jazzyarchitects.ism.hackfest.orderit;
+package phoenix.ism.hackfest.orderit;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

@@ -1,4 +1,4 @@
-package jazzyarchitects.ism.hackfest.orderit;
+package phoenix.ism.hackfest.orderit;
 
 import org.junit.Test;
 

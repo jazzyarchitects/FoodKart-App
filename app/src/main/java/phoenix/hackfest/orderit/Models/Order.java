@@ -1,4 +1,4 @@
-package jazzyarchitects.ism.hackfest.orderit.Models;
+package phoenix.hackfest.orderit.Models;
 
 import android.os.Parcel;
 import android.os.Parcelable;

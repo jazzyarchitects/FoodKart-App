@@ -1,4 +1,4 @@
-package jazzyarchitects.ism.hackfest.orderit.CustomViews;
+package phoenix.hackfest.orderit.CustomViews;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -6,7 +6,7 @@ import android.text.Html;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-import jazzyarchitects.ism.hackfest.orderit.R;
+import phoenix.ism.hackfest.orderit.R;
 
 /**
  * Created by Jibin_ism on 03-Mar-16.
@@ -36,13 +36,19 @@ public class CapitalTextView extends TextView {
     public void init(AttributeSet attributeSet) {
         TypedArray a = mContext.obtainStyledAttributes(attributeSet, R.styleable.CapitalTextView);
         if (attributeSet != null) {
-            scaleFactor = a.getInt(R.styleable.CapitalTextView_letterScaleFactor, 1) - 1;
+            scaleFactor = a.getInt(R.styleable.CapitalTextView_letterScaleFactor, 1)-1;
             scaleAllWords = a.getBoolean(R.styleable.CapitalTextView_focusAllWords, false);
-            thisText = this.getText().toString();
+//            thisText = "My Name is Jibin";
+//            thisText =
+            thisText= attributeSet.getAttributeValue("http://schemas.android.com/apk/res/android","text");
             thisText = thisText.toUpperCase();
             String[] strings = thisText.split(" ");
             String finalString = "";
-            for (int i = 0; i < strings.length; i++) {
+            if(thisText.isEmpty()){
+                a.recycle();
+                return;
+            }
+            for (int i=0;i<strings.length;i++) {
                 String string = strings[i];
                 int k = 0;
                 int protection = 0;
@@ -74,8 +80,34 @@ public class CapitalTextView extends TextView {
                 finalString += " ";
             }
             this.setText(Html.fromHtml(finalString));
-            invalidate();
         }
         a.recycle();
+    }
+
+    public String getText() {
+        return thisText;
+    }
+
+    public void setText(String text) {
+        this.thisText = text;
+        invalidate();
+    }
+
+    public int getScaleFactor() {
+        return scaleFactor;
+    }
+
+    public void setScaleFactor(int scaleFactor) {
+        this.scaleFactor = scaleFactor;
+        invalidate();
+    }
+
+    public boolean isScaleAllWords() {
+        return scaleAllWords;
+    }
+
+    public void setScaleAllWords(boolean scaleAllWords) {
+        this.scaleAllWords = scaleAllWords;
+        invalidate();
     }
 }

@@ -1,4 +1,4 @@
-package jazzyarchitects.ism.hackfest.orderit.HelperClasses;
+package phoenix.hackfest.orderit.HelperClasses;
 
 /**
  * Created by Jibin_ism on 03-Mar-16.

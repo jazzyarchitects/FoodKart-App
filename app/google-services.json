@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_id": "foodkart-1240",
+    "project_number": "434106954057",
+    "name": "FoodKart"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:434106954057:android:8fb8c02ccbe433a2",
+        "client_id": "android:phoenix.hackfest.orderit",
+        "client_type": 1,
+        "android_client_info": {
+          "package_name": "phoenix.hackfest.orderit",
+          "certificate_hash": []
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "434106954057-brrsudfq1vnb9l26qqu8uiq59k8onto9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "phoenix.hackfest.orderit",
+            "certificate_hash": "AA37A6ABFCE0F2352B499978AFB9AFA65E29AD6C"
+          }
+        },
+        {
+          "client_id": "434106954057-q8hl7cmtn6th4artpn23mrrvumkpinjf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "cloud_messaging_service": {
+          "status": 2,
+          "apns_config": []
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "google_signin_service": {
+          "status": 2
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "client_info": [],
+  "ARTIFACT_VERSION": "1"
+}

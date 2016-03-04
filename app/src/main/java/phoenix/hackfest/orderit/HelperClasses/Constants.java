@@ -9,4 +9,13 @@ public class Constants {
         return (target != null) && android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
     }
 
+
+    public static class QuickstartPreferences {
+
+        public static final String SENT_TOKEN_TO_SERVER = "sentTokenToServer";
+        public static final String REGISTRATION_COMPLETE = "registrationComplete";
+
+    }
+
+
 }

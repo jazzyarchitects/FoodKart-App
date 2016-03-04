@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:gravity="center_vertical"
     android:paddingTop="3dp"
     android:paddingBottom="3dp"
+    android:layout_marginTop="3dp"
+    android:orientation="horizontal"
     android:weightSum="10">
 
     <TextView android:layout_width="0dp"
@@ -13,7 +15,7 @@
         android:gravity="center"
         android:textColor="@color/checkoutItemTextColor"
         android:id="@+id/indexView"
-        tools:text="1."/>
+        android:text="1."/>
 
     <TextView android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -21,7 +23,7 @@
         android:id="@+id/orderView"
         android:gravity="center_vertical"
         android:textColor="@color/checkoutItemTextColor"
-        tools:text="Item 1"/>
+        android:text="Item 1"/>
 
 
     <TextView android:layout_width="0dp"
@@ -30,7 +32,7 @@
         android:gravity="center"
         android:textColor="@color/checkoutItemTextColor"
         android:id="@+id/qtyView"
-        tools:text="1"/>
+        android:text="1"/>
 
     <phoenix.hackfest.orderit.CustomViews.RupeeTextView
         android:layout_width="0dp"
@@ -39,7 +41,7 @@
         android:gravity="center"
         android:textColor="@color/checkoutItemTextColor"
         android:id="@+id/amountView"
-        tools:text="1"/>
+        android:text="1"/>
 
 
-</TableRow>
+</LinearLayout>

@@ -5,9 +5,10 @@ package phoenix.hackfest.orderit.Models;
  */
 public class FoodOrder {
     private String itemName = "";
-    private int cost=0, qty=0;
+    private double cost=0;
+    private  int qty=0;
 
-    public FoodOrder(String itemName, int cost, int qty) {
+    public FoodOrder(String itemName, double cost, int qty) {
         this.itemName = itemName;
         this.cost = cost;
         this.qty = qty;
@@ -24,11 +25,11 @@ public class FoodOrder {
         this.itemName = itemName;
     }
 
-    public int getCost() {
+    public double getCost() {
         return cost;
     }
 
-    public void setCost(int cost) {
+    public void setCost(double cost) {
         this.cost = cost;
     }
 
@@ -38,5 +39,10 @@ public class FoodOrder {
 
     public void setQty(int qty) {
         this.qty = qty;
+    }
+
+    @Override
+    public String toString() {
+        return this.itemName+ " "+this.qty+" "+this.getCost();
     }
 }

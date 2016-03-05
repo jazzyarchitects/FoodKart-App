@@ -130,8 +130,6 @@ public class MainActivity extends AppCompatActivity
             ft.replace(R.id.main, new Notification());
             ft.commit();
         }
-
-
             DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
             drawer.closeDrawer(GravityCompat.START);
             return true;
@@ -139,6 +137,27 @@ public class MainActivity extends AppCompatActivity
 
 
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+//        registerReceiver();
+    }
+
+//    @Override
+//    protected void onPause() {
+//        LocalBroadcastManager.getInstance(this).unregisterReceiver(mRegistrationBroadcastReceiver);
+//        isReceiverRegistered = false;
+//        super.onPause();
+//    }
+//
+//
+//    private void registerReceiver(){
+//        if(!isReceiverRegistered) {
+//            LocalBroadcastManager.getInstance(this).registerReceiver(mRegistrationBroadcastReceiver,
+//                    new IntentFilter(Constants.QuickstartPreferences.REGISTRATION_COMPLETE));
+//            isReceiverRegistered = true;
+//        }
+//    }
 
 
     private boolean checkPlayServices() {

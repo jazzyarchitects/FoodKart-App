@@ -10,6 +10,9 @@ public class Constants {
     }
 
 
+    public static final String USER_SHARED_PREFERENCES = "userShared";
+    public static final String USER_ORDER_LIST="userOrder";
+
     public static class QuickstartPreferences {
 
         public static final String SENT_TOKEN_TO_SERVER = "sentTokenToServer";

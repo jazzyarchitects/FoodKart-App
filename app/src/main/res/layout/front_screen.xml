@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/download"
+
+                android:scaleType="centerCrop"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="30dp"
+                android:background="#FFF"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+
+                <phoenix.hackfest.orderit.CustomViews.CapitalTextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:text="Name of Hotel"
+                    android:textSize="16dp"
+                    app:letterScaleFactor="2"
+                    app:focusAllWords="true"
+
+                    />
+
+                <TextView
+                    android:id="@+id/ao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="5dp"
+                    android:textSize="12dp"
+                    android:text="Accepting Order"
+                    android:layout_alignParentRight="true"
+                    />
+                <RelativeLayout
+                    android:layout_width="150dp"
+                    android:layout_alignTop="@+id/curTotal"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_below="@+id/name"
+                    android:id="@+id/adminDetails"
+                    android:layout_marginLeft="5dp"
+                    android:background="@color/dark">
+
+                    <TextView
+                        android:id="@+id/orderBy"
+                        android:textSize="15dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Order By :" />
+
+                    <TextView
+                        android:id="@+id/add"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Address :"
+                        android:textSize="15dp"
+                        android:layout_below="@+id/orderBy"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@+id/tarAmt"
+                    android:id="@+id/curTotal"
+                    android:paddingTop="7dp"
+                    android:layout_alignParentRight="true"
+                    android:text="Current total :"
+                    android:paddingRight="50dp"
+                    android:layout_below="@+id/ao"/>
+
+                <TextView
+                    android:id="@+id/curVal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10dp"
+                    android:layout_below="@+id/ao"
+                    android:layout_marginLeft="270dp"
+                    android:paddingTop="5dp"/>
+
+                <TextView
+                    android:id="@+id/tarVal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10dp"
+                    android:layout_below="@+id/curVal"
+                    android:layout_marginLeft="270dp"
+                    android:paddingTop="7dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tarAmt"
+                    android:paddingRight="50dp"
+                    android:text="Target amount :"
+                    android:layout_below="@+id/curTotal"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:id="@+id/oTime"
+                    android:layout_marginTop="10dp"
+                    android:text="Order Time :"
+                    android:layout_below="@+id/adminDetails"
+                    />
+                <TextView
+                    android:id="@+id/orderTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/oTime"
+                    android:layout_alignBottom="@+id/oTime"
+                    android:inputType="time"/>
+
+                <ImageButton
+                    android:id="@+id/addButton"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/tarAmt"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_action_user"/>
+
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
+
+

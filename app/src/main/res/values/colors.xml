@@ -9,6 +9,7 @@
     <color name="icons">#FFFFFF</color>
     <color name="divider">#B6B6B6</color>
     <color name="checkoutItemTextColor">#222</color>
+    <color name="dark">#e0e0e0</color>
 
     <color name="admin">#F0F0F0</color>
     <color name="ADD">#FF0000</color>

@@ -1,8 +1,11 @@
 package phoenix.hackfest.orderit.Models;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+
 import com.google.gson.Gson;
 
-import org.json.JSONObject;
+import phoenix.hackfest.orderit.HelperClasses.Constants;
 
 /**
  * Created by Jibin_ism on 03-Mar-16.
@@ -75,5 +78,19 @@ public class User {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public static User getUser(Context context){
+        SharedPreferences sharedPreferences= context.getSharedPreferences(Constants.USER_SHARED_PREFERENCES, Context.MODE_PRIVATE);
+        Gson gson=new Gson();
+        return gson.fromJson(sharedPreferences.getString(Constants.USER_DATA,""), User.class);
+    }
+
+    public static void saveUser(Context context, User user){
+        SharedPreferences sharedPreferences= context.getSharedPreferences(Constants.USER_SHARED_PREFERENCES, Context.MODE_PRIVATE);
+        Gson gson=new Gson();
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(Constants.USER_DATA, gson.toJson(user));
+        editor.apply();
     }
 }

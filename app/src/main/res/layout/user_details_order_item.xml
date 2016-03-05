@@ -1,15 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:padding="5dp"
-    android:layout_height="match_parent">
+    android:padding="7dp"
+    android:background="#FFF"
+    android:layout_height="wrap_content">
 
-    <TextView
+    <phoenix.hackfest.orderit.CustomViews.CapitalTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="Jibin Mathews"/>
+        android:id="@+id/userName"
+        android:textSize="18sp"
+        app:letterScaleFactor="2"
+        app:focusAllWords="true"
+        android:text="Jibin Mathews"
+        android:textColor="@color/checkoutItemTextColor" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignBottom="@+id/userName"
+        android:layout_alignParentRight="true" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/checkoutItemTextColor"
+            android:layout_height="wrap_content"
+            android:text="Due:"/>
+
+        <phoenix.hackfest.orderit.CustomViews.RupeeTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/checkoutItemTextColor"
+            android:id="@+id/amountDue"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:text=""/>
+
+    </LinearLayout>
+
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/userMobile"-->
+        <!--android:layout_below="@+id/userName"-->
+        <!--android:textSize="15sp"-->
+        <!--android:textColor="@color/checkoutItemTextColor"-->
+        <!--android:text="+91-8877073355"/>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/userName"
+        android:weightSum="10">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_weight="6">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#EEE"
+                android:layout_below="@+id/userMobile"
+                android:id="@+id/userAddressLayout"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Amber D-356\nISM Dhanbad"
+                    android:id="@+id/userAddress"/>
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/orderDetails"
+                android:textColor="#444"
+                android:layout_marginTop="5dp"
+                android:text="1. Roti - 5 Rs: 10"/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="vertical"
+            android:layout_weight="4">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFF"
+                android:id="@+id/callUser"
+                android:src="@drawable/ic_action_phone_start"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="Paid"
+                android:id="@+id/userPaid"
+                android:padding="5dp"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 
 

@@ -30,7 +30,7 @@
             android:name="phoenix.hackfest.orderit.OrderDetails"
             android:label="Order Details"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustNothing|adjustPan|adjustResize">
+            android:windowSoftInputMode="adjustPan|stateHidden">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

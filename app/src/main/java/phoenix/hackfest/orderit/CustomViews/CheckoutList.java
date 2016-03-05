@@ -150,7 +150,7 @@ public class CheckoutList extends LinearLayout {
             //Log.e("CheckListItem","Food order: "+foodOrder.toString());
             if(foodOrder!=null) {
                 //Log.e("CheckListItem","foodorder not null");
-                sNoView.setText(this.index + ".");
+                sNoView.setText(String.valueOf(this.index));
                 itemView.setText(foodOrder.getItemName());
                 qtyView.setText(String.valueOf(foodOrder.getQty()));
                 costView.setAmount(foodOrder.getCost());

@@ -117,24 +117,24 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onResume() {
         super.onResume();
-        registerReceiver();
+//        registerReceiver();
     }
 
-    @Override
-    protected void onPause() {
-        LocalBroadcastManager.getInstance(this).unregisterReceiver(mRegistrationBroadcastReceiver);
-        isReceiverRegistered = false;
-        super.onPause();
-    }
-
-
-    private void registerReceiver(){
-        if(!isReceiverRegistered) {
-            LocalBroadcastManager.getInstance(this).registerReceiver(mRegistrationBroadcastReceiver,
-                    new IntentFilter(Constants.QuickstartPreferences.REGISTRATION_COMPLETE));
-            isReceiverRegistered = true;
-        }
-    }
+//    @Override
+//    protected void onPause() {
+//        LocalBroadcastManager.getInstance(this).unregisterReceiver(mRegistrationBroadcastReceiver);
+//        isReceiverRegistered = false;
+//        super.onPause();
+//    }
+//
+//
+//    private void registerReceiver(){
+//        if(!isReceiverRegistered) {
+//            LocalBroadcastManager.getInstance(this).registerReceiver(mRegistrationBroadcastReceiver,
+//                    new IntentFilter(Constants.QuickstartPreferences.REGISTRATION_COMPLETE));
+//            isReceiverRegistered = true;
+//        }
+//    }
 
     /**
      * Check the device to make sure it has the Google Play Services APK. If

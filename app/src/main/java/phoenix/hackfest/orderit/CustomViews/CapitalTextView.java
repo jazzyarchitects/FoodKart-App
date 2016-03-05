@@ -41,13 +41,14 @@ public class CapitalTextView extends TextView {
 //            thisText = "My Name is Jibin";
 //            thisText =
             thisText= attributeSet.getAttributeValue("http://schemas.android.com/apk/res/android","text");
-            thisText = thisText.toUpperCase();
-            String[] strings = thisText.split(" ");
-            String finalString = "";
             if(thisText.isEmpty()){
                 a.recycle();
                 return;
             }
+
+            thisText = thisText.toUpperCase();
+            String[] strings = thisText.split(" ");
+            String finalString = "";
             for (int i=0;i<strings.length;i++) {
                 String string = strings[i];
                 int k = 0;

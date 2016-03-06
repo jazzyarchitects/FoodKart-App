@@ -59,7 +59,7 @@ public class OrderDetails extends AppCompatActivity {
         restName = (TextView) findViewById(R.id.restName);
         orderTime = (TextView) findViewById(R.id.orderTime);
         orderby = (TextView) findViewById(R.id.orderedBy);
-        address = (TextView) findViewById(R.id.address);
+      ///  address = (TextView) findViewById(R.id.address);
 //        curTotal=(TextView)findViewById(R.id.curTotal);
 //        tarAmt=(TextView)findViewById(R.id.tarAmt);
 

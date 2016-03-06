@@ -46,6 +46,7 @@
 
 
     <Button
+        android:id="@+id/send_mail"
         android:layout_width="250dp"
         android:layout_gravity="center"
         android:layout_marginTop="5dp"

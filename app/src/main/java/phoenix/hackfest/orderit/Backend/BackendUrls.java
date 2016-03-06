@@ -7,8 +7,9 @@ public class BackendUrls {
     //TODO: Change urls
     public static final String BASE_URL = "http://192.168.145.104:3000/";
     public static final String USER_PREFIX = "user/";
-    public static final String LOGIN = BASE_URL+USER_PREFIX+"login";
-    public static final String SIGNUP = BASE_URL+USER_PREFIX;
+//    public static final String LOGIN = BASE_URL+USER_PREFIX+"login";
+    public static final String SIGNUP = "http://medicalassistant-jazzyarchitect.rhcloud.com/api/user/signup";
+    public static final String LOGIN = "http://medicalassistant-jazzyarchitect.rhcloud.com/api/user/login";
     public static final String ORDER_PREFIX = "order/";
     public static final String ORDERS = BASE_URL+ORDER_PREFIX;
 }

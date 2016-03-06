@@ -21,6 +21,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     ArrayList<Order> orders;
     Context mContext;
+    String TAG_POS="pos";
 
 
     public MyAdapter(Context context, ArrayList<Order> orders) {
@@ -55,7 +56,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
         final Order order=orders.get(position);
         String rest=order.getRestaurent();
         String orderTime=order.getOrderingTime();
@@ -77,6 +78,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             public void onClick(View v) {
                 Intent i = new Intent(mContext, OrderDetails.class);
                 i.putExtra("order", order);
+                i.putExtra("pos", position);
                 mContext.startActivity(i);
             }
         });

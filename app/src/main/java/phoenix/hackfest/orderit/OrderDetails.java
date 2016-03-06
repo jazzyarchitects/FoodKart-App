@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import java.util.Random;
+
 import phoenix.hackfest.orderit.CustomViews.CheckoutList;
 import phoenix.hackfest.orderit.Dialogs.MyOrderList;
 import phoenix.hackfest.orderit.Models.FoodOrder;
@@ -24,7 +26,7 @@ import phoenix.ism.hackfest.orderit.R;
  */
 public class OrderDetails extends AppCompatActivity {
 
-    TextView restName, orderTime, orderby, address, curTotal, tarAmt;
+    TextView restName, orderTime, orderby, curTotal, tarAmt;
     EditText item, qty, cost;
     Button details;
     FoodOrder foodOrder;
@@ -33,6 +35,9 @@ public class OrderDetails extends AppCompatActivity {
     CheckoutList checkoutList;
     Order order;
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +45,9 @@ public class OrderDetails extends AppCompatActivity {
 
         Intent intent = getIntent();
         order=intent.getParcelableExtra("order");
+        int pos=intent.getIntExtra("pos", 0);
+
+
 
 
         checkoutList = (CheckoutList) findViewById(R.id.checkoutList);
@@ -50,17 +58,29 @@ public class OrderDetails extends AppCompatActivity {
         getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        setTitle("" );
+        setTitle("");
 
         restName = (TextView) findViewById(R.id.restName);
         orderTime = (TextView) findViewById(R.id.orderTime);
         orderby = (TextView) findViewById(R.id.orderedBy);
-//        curTotal=(TextView)findViewById(R.id.curTotal);
-//        tarAmt=(TextView)findViewById(R.id.tarAmt);
+        curTotal=(TextView)findViewById(R.id.curTotal);
+        tarAmt=(TextView)findViewById(R.id.tarAmt);
+
+        restName.setText(order.getRestaurent());
+        orderTime.setText(order.getOrderingTime());
+        orderby.setText(order.getAdminName().concat(", ").concat(order.getAdminAddress()));
+        curTotal.setText(order.getCurrentAmount().toString());
+        tarAmt.setText(order.getTargetAmount().toString());
+
+
 
         item = (EditText) findViewById(R.id.item);
         qty = (EditText) findViewById(R.id.qty);
         cost = (EditText) findViewById(R.id.cost);
+        item.setText("chilly chicken");
+        qty.setText("2");
+        cost.setText("220.0");
+
 
         add = (ImageButton) findViewById(R.id.add);
         details = (Button) findViewById(R.id.details);

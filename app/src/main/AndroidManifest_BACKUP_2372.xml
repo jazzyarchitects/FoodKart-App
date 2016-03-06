@@ -29,7 +29,14 @@
         <activity
             android:name="phoenix.hackfest.orderit.SplashActivity"
             android:label="@string/title_activity_splash"
+<<<<<<< HEAD
+            android:theme="@style/AppTheme">
+        </activity>
+
+
+=======
             android:theme="@style/AppTheme"></activity>
+>>>>>>> 4a045fe0c6d85b957c3ec71440ed5a1fa2638bc1
         <activity
             android:name="phoenix.hackfest.orderit.OrderDetails"
             android:label="Order Details"

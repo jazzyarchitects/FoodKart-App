@@ -2,13 +2,26 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
-        <item android:id="@+id/name" android:icon="@android:drawable/ic_menu_camera"
+        <item
+            android:id="@+id/profile"
+            android:icon="@drawable/ic_action_user"
             android:title="Profile" />
-        <item android:id="@+id/mkart" android:icon="@android:drawable/ic_menu_slideshow"
+
+        <item android:title="Split it"
+            android:icon="@drawable/ic_action_list"
+            android:id="@+id/splitIt"/>
+        <item
+            android:id="@+id/mkart"
+            android:icon="@drawable/ic_item_swipe_left"
             android:title="My Kart" />
-        <item  android:id="@+id/notf" android:icon="@android:drawable/ic_menu_manage"
-            android:title="Notification" />
-        <item android:id="@+id/abtus" android:icon="@android:drawable/ic_menu_manage"
+
+        <item
+            android:id="@+id/notf"
+            android:icon="@drawable/ic_menu_send"
+            android:title="Notifications" />
+        <item
+            android:id="@+id/abtus"
+            android:icon="@drawable/ic_menu_share"
             android:title="About Us" />
     </group>
 

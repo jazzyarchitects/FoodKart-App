@@ -9,4 +9,6 @@ public class BackendUrls {
     public static final String USER_PREFIX = "user/";
     public static final String LOGIN = BASE_URL+USER_PREFIX+"login";
     public static final String SIGNUP = BASE_URL+USER_PREFIX;
+    public static final String ORDER_PREFIX = "order/";
+    public static final String ORDERS = BASE_URL+ORDER_PREFIX;
 }

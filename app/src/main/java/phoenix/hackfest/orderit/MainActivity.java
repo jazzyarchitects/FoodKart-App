@@ -19,6 +19,8 @@ import android.view.View;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 
+import phoenix.hackfest.orderit.Fragments.AboutUs;
+import phoenix.hackfest.orderit.Fragments.MyKart;
 import phoenix.hackfest.orderit.HelperClasses.Constants;
 import phoenix.hackfest.orderit.Services.RegistrationIntentService;
 import phoenix.ism.hackfest.orderit.R;

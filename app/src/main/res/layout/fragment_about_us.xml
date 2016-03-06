@@ -35,22 +35,23 @@
         </LinearLayout>
     </LinearLayout>
 
+    <!--<Button-->
+        <!--android:layout_width="250dp"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="250dp"-->
+        <!--android:text="Terms And Condition"-->
+        <!--android:textColor="@color/icons"-->
+        <!--android:background="@drawable/button_press"/>-->
+
+
     <Button
         android:layout_width="250dp"
         android:layout_gravity="center"
-        android:layout_height="wrap_content"
         android:layout_marginTop="250dp"
-        android:text="Terms And Condition"
-        android:textColor="@color/icons"
-        android:background="@drawable/button_press"/>
-
-
-    <Button
-        android:layout_width="250dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="5dp"
         android:layout_height="wrap_content"
         android:text="Send Feedback"
+        android:id="@+id/sendFeedback"
         android:textColor="@color/icons"
         android:background="@drawable/button_press"/>
 

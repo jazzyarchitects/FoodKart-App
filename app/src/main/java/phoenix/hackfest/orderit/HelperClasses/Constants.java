@@ -35,6 +35,7 @@ public class Constants {
     public static final String USER_SHARED_PREFERENCES = "userShared";
     public static final String USER_ORDER_LIST="userOrder";
     public static final String USER_LOGGED_IN= "loggedIn";
+    public static final String USER_DATA= "userData";
     public static final String USER_ACCESS_TOKEN = "access_token";
 
     public static class QuickstartPreferences {

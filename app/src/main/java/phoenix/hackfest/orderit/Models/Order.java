@@ -13,6 +13,7 @@ public class Order implements Parcelable {
     String id="";
     String restaurent="", orderingTime="";
     Double targetAmount=0.0, currentAmount=0.0;
+    String adminName, adminAddress;
     ArrayList<Participant> participants;
 
     public Order() {
@@ -26,6 +27,8 @@ public class Order implements Parcelable {
         participants = in.createTypedArrayList(Participant.CREATOR);
         currentAmount = in.readDouble();
         targetAmount = in.readDouble();
+        adminAddress = in.readString();
+        adminName = in.readString();
     }
 
     public static final Creator<Order> CREATOR = new Creator<Order>() {
@@ -53,6 +56,8 @@ public class Order implements Parcelable {
         dest.writeTypedList(participants);
         dest.writeDouble(currentAmount);
         dest.writeDouble(targetAmount);
+        dest.writeString(adminAddress);
+        dest.writeString(adminName);
     }
 
     public String getId() {
@@ -78,6 +83,24 @@ public class Order implements Parcelable {
     public void setOrderingTime(String orderingTime) {
         this.orderingTime = orderingTime;
     }
+
+    public String getAdminName() {
+        return adminName;
+    }
+
+    public void setAdminName(String adminName) {
+        this.adminName = adminName;
+    }
+
+
+    public String getAdminAddress() {
+        return adminAddress;
+    }
+
+    public void setAdminAddress(String adminAddress) {
+        this.adminAddress = adminAddress;
+    }
+
 
     public Double getTargetAmount() {
         return targetAmount;

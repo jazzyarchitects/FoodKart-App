@@ -1,16 +1,17 @@
-package phoenix.hackfest.orderit;
+package phoenix.hackfest.orderit.Adapters;
 
 import android.content.Context;
-import android.support.v7.widget.CardView;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import java.util.ArrayList;
 
-import phoenix.hackfest.orderit.Dialogs.MyOrderList;
 import phoenix.hackfest.orderit.Models.Order;
+import phoenix.hackfest.orderit.OrderDetails;
 import phoenix.ism.hackfest.orderit.R;
 
 /**
@@ -29,7 +30,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView RestName, ordertime1, orderBy, address,curAmount, tarAmount;
+        TextView RestName, ordertime1,orderBy, curAmount, tarAmount;
         View v;
 
 
@@ -38,7 +39,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             RestName=(TextView)itemView.findViewById(R.id.name);
             ordertime1=(TextView)itemView.findViewById(R.id.orderTime);
             orderBy=(TextView)itemView.findViewById(R.id.orderedBy);
-            address=(TextView)itemView.findViewById(R.id.add);
             curAmount=(TextView)itemView.findViewById(R.id.curVal);
             tarAmount=(TextView)itemView.findViewById(R.id.tarVal);
 
@@ -56,12 +56,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Order order=orders.get(position);
+        final Order order=orders.get(position);
         String rest=order.getRestaurent();
         String orderTime=order.getOrderingTime();
         Double curAmt=order.getCurrentAmount();
         Double TarAmt=order.getTargetAmount();
 
+        String adminadd=order.getAdminAddress();
+        String adminame=order.getAdminName();
+
+
+        holder.orderBy.setText(adminame.concat(", "+adminadd));
         holder.RestName.setText(rest);
         holder.ordertime1.setText(orderTime);
         holder.curAmount.setText(curAmt.toString());
@@ -70,7 +75,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         holder.v.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent i = new Intent(mContext, OrderDetails.class);
+                i.putExtra("order", order);
+                mContext.startActivity(i);
             }
         });
 

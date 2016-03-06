@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+import phoenix.hackfest.orderit.Adapters.MyAdapter;
 import phoenix.hackfest.orderit.Models.Order;
 import phoenix.ism.hackfest.orderit.R;
 

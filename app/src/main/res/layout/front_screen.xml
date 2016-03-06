@@ -2,32 +2,35 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="175dp"
     android:orientation="vertical">
 
     <android.support.v7.widget.CardView
         android:id="@+id/card_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="175dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp">
+
             <ImageView
+                android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/download"
+                android:scaleType="centerCrop"
+                android:src="@drawable/download" />
 
-                android:scaleType="centerCrop"/>
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginBottom="2dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:layout_marginTop="30dp"
                 android:background="#FFF"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp">
+                android:padding="5dp">
 
                 <phoenix.hackfest.orderit.CustomViews.CapitalTextView
                     android:id="@+id/name"
@@ -36,8 +39,8 @@
                     android:paddingLeft="5dp"
                     android:text="Name of Hotel"
                     android:textSize="16dp"
-                    app:letterScaleFactor="2"
                     app:focusAllWords="true"
+                    app:letterScaleFactor="2"
 
                     />
 
@@ -45,104 +48,115 @@
                     android:id="@+id/ao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
                     android:paddingRight="5dp"
-                    android:textSize="12dp"
                     android:text="Accepting Order"
-                    android:layout_alignParentRight="true"
-                    />
-                <RelativeLayout
-                    android:layout_width="150dp"
-                    android:layout_alignTop="@+id/curTotal"
+                    android:textSize="12dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
                     android:layout_below="@+id/name"
-                    android:id="@+id/adminDetails"
-                    android:layout_marginLeft="5dp"
-                    android:background="@color/dark">
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
 
-                    <TextView
-                        android:id="@+id/orderBy"
-                        android:textSize="15dp"
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Order By :" />
+                        android:layout_weight="6">
 
-                    <TextView
-                        android:id="@+id/add"
-                        android:layout_width="wrap_content"
+                        <TextView
+                            android:id="@+id/orderBy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minHeight="50dp"
+                            android:gravity="center_vertical"
+                            android:padding="2dp"
+                            android:background="#EEE"
+                            android:text="Order By :"
+                            android:textSize="12dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Address :"
-                        android:textSize="15dp"
-                        android:layout_below="@+id/orderBy"/>
+                        android:layout_weight="4"
+                        android:orientation="vertical">
 
-                </RelativeLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignRight="@+id/tarAmt"
-                    android:id="@+id/curTotal"
-                    android:paddingTop="7dp"
-                    android:layout_alignParentRight="true"
-                    android:text="Current total :"
-                    android:paddingRight="50dp"
-                    android:layout_below="@+id/ao"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/curVal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="10dp"
-                    android:layout_below="@+id/ao"
-                    android:layout_marginLeft="270dp"
-                    android:paddingTop="5dp"/>
 
-                <TextView
-                    android:id="@+id/tarVal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="10dp"
-                    android:layout_below="@+id/curVal"
-                    android:layout_marginLeft="270dp"
-                    android:paddingTop="7dp"/>
+                            <TextView
+                                android:id="@+id/curTotal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="7dp"
+                                android:text="Current total :"
+                                android:textSize="12sp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tarAmt"
-                    android:paddingRight="50dp"
-                    android:text="Target amount :"
-                    android:layout_below="@+id/curTotal"/>
+                            <phoenix.hackfest.orderit.CustomViews.RupeeTextView
+                                android:id="@+id/curVal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="5dp"
+                                android:textSize="12dp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="5dp"
-                    android:id="@+id/oTime"
-                    android:layout_marginTop="10dp"
-                    android:text="Order Time :"
-                    android:layout_below="@+id/adminDetails"
-                    />
-                <TextView
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tarAmt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Target amount :"
+                                android:textSize="12sp" />
+
+                            <phoenix.hackfest.orderit.CustomViews.RupeeTextView
+                                android:id="@+id/tarVal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="7dp"
+                                android:textSize="12dp" />
+
+
+                        </LinearLayout>
+
+
+                        <ImageButton
+                            android:id="@+id/addButton"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="right"
+                            android:src="@drawable/ic_action_user" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <TextView xmlns:tools="http://schemas.android.com/tools"
                     android:id="@+id/orderTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/oTime"
-                    android:layout_alignBottom="@+id/oTime"
-                    android:inputType="time"/>
-
-                <ImageButton
-                    android:id="@+id/addButton"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_below="@+id/tarAmt"
-                    android:layout_alignParentRight="true"
-                    android:src="@drawable/ic_action_user"/>
-
-
+                    android:inputType="time"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="9:30pm" />
 
             </RelativeLayout>
+
+
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 

@@ -1,7 +1,6 @@
 package phoenix.hackfest.orderit.Fragments;
 
 import android.app.Fragment;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
@@ -9,15 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-
 import phoenix.hackfest.orderit.Backend.BackendUrls;
-import phoenix.hackfest.orderit.Models.FoodOrder;
-import phoenix.hackfest.orderit.Models.Order;
-import phoenix.hackfest.orderit.Services.BackendInterfacer;
 import phoenix.ism.hackfest.orderit.R;
 
 /**
@@ -37,8 +28,6 @@ public class MyKart extends Fragment {
     String TAG_ADMIN_ADD="admin_address";
     String TAG_QUANT="quantity";
     String TAG_PRICE="price";
-
-
 
 
     Context mContext;
@@ -82,65 +71,6 @@ public class MyKart extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         recyclerView = (RecyclerView)view.findViewById(R.id.recyclerView);
-
-
-        BackendInterfacer backendInterfacer=new BackendInterfacer(mContext,url,"GET",null);
-        backendInterfacer.setSimpleBackendListener(new BackendInterfacer.SimpleBackendListener() {
-
-            ProgressDialog progressDialog;
-            @Override
-            public void onPreExecute() {
-                progressDialog=new ProgressDialog(mContext);
-                progressDialog.setIndeterminate(true);
-                progressDialog.setMessage("Searching sharers");
-                progressDialog.setCancelable(false);
-                progressDialog.show();
-
-            }
-
-            @Override
-            public void onResult(String result) {
-                if(progressDialog!=null && progressDialog.isShowing()){
-                    progressDialog.dismiss();
-                }
-                try {
-                    JSONArray jsonArray = new JSONArray(result);
-                    ArrayList<Order> orders=new ArrayList<Order>();
-                    ArrayList<FoodOrder> food=new ArrayList<FoodOrder>();
-
-                    for(int i=0;i<jsonArray.length();i++)
-                    {
-                        JSONObject jsonObject=jsonArray.getJSONObject(i);
-                        Order mOrders=new Order();
-                        FoodOrder mfood=new FoodOrder();
-                        mOrders.setId(jsonObject.getString(TAG_ID));
-                        mOrders.setCurrentAmount(Double.parseDouble(jsonObject.getString(TAG_CURTOT)));
-                        mOrders.setOrderingTime(jsonObject.getString(TAG_ORDER_TIME));
-                        mOrders.setTargetAmount(Double.parseDouble(jsonObject.getString(TAG_TARAMT)));
-                        mOrders.setRestaurent(jsonObject.getString(TAG_REST));
-                        mOrders.setAdminName(jsonObject.getString(TAG_ADMIN_NAME));
-                        mOrders.setAdminAddress(jsonObject.getString(TAG_ADMIN_ADD));
-                        mfood.setItemName(jsonObject.getString(TAG_ITEM));
-                        mfood.setQty(Integer.parseInt(jsonObject.getString(TAG_QUANT)));
-                        mfood.setCost(Double.parseDouble(jsonObject.getString(TAG_PRICE)));
-
-                        orders.set(i,mOrders);
-                        food.set(i,mfood);
-                    }
-
-
-
-
-
-
-
-
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
-            }
-        });
-        backendInterfacer.execute();
 
 
     }

@@ -26,6 +26,7 @@ import java.util.TimerTask;
 
 import phoenix.hackfest.orderit.Fragments.LoginFragment;
 import phoenix.hackfest.orderit.Fragments.SignupFragment;
+import phoenix.hackfest.orderit.Models.User;
 import phoenix.ism.hackfest.orderit.R;
 
 
@@ -47,6 +48,11 @@ public class RegistrationActivity extends AppCompatActivity implements LoginFrag
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if(User.isUserLoggedIn(this)){
+            startActivity(new Intent(this, NavigationDrawerActivity.class));
+            finish();
+        }
 
         setContentView(R.layout.activity_registration);
         displayFragment(new LoginFragment(), false);
@@ -164,7 +170,7 @@ public class RegistrationActivity extends AppCompatActivity implements LoginFrag
     @Override
     public void onUserAuthenticated() {
         //TODO: Todo
-        startActivity(new Intent(this, MainActivity.class));
+        startActivity(new Intent(this, NavigationDrawerActivity.class));
         finish();
     }
 }

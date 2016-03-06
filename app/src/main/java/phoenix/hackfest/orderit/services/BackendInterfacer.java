@@ -3,8 +3,6 @@ package phoenix.hackfest.orderit.Services;
 import android.content.Context;
 import android.os.AsyncTask;
 
-import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -13,6 +11,9 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
+
+import phoenix.hackfest.orderit.HelperClasses.Constants;
 
 /**
  * Created by Jibin_ism on 13-Dec-15.
@@ -22,24 +23,23 @@ public class BackendInterfacer extends AsyncTask<Void, Void, String> {
     private static final String TAG = "BackendInterfacer";
     String method;
     URL mUrl;
-    JSONObject mDataSet;
+    HashMap<String, String> mDataSet;
 
-    public BackendInterfacer(Context context, String url, String method, JSONObject jsonObject) {
+    public BackendInterfacer(Context context, String url, String method, HashMap<String, String> dataSet) {
         try {
             this.mUrl = new URL(url);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-        this.mDataSet = jsonObject;
+        this.mDataSet = dataSet;
         this.method = method;
         if (!method.equalsIgnoreCase("PUT") && !method.equalsIgnoreCase("POST") && !method.equalsIgnoreCase("GET") && !method.equalsIgnoreCase("DELETE")) {
             throw new RuntimeException("Unexpected Backend interfacer method: " + method);
         }
-
     }
 
-    public BackendInterfacer(String url, String method, JSONObject jsonObject) {
-        this(null,url, method, jsonObject);
+    public BackendInterfacer(String url, String method, HashMap<String, String> dataSet) {
+        this(null,url, method, dataSet);
     }
 
     @Override
@@ -62,14 +62,14 @@ public class BackendInterfacer extends AsyncTask<Void, Void, String> {
             urlConnection.setReadTimeout(45000);
             urlConnection.setDoInput(true);
 
+            urlConnection.setRequestProperty("x-service-id", "androidApp1958-2013JE0305");
 
 
             if (mDataSet != null) {
-
                 urlConnection.setDoOutput(true);
                 OutputStream os = urlConnection.getOutputStream();
                 OutputStreamWriter osw = new OutputStreamWriter(os);
-                osw.write(mDataSet.toString());
+                osw.write(Constants.getPostDataString(mDataSet));
                 osw.flush();
                 osw.close();
                 os.close();

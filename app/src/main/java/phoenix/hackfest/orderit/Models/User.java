@@ -5,6 +5,9 @@ import android.content.SharedPreferences;
 
 import com.google.gson.Gson;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import phoenix.hackfest.orderit.HelperClasses.Constants;
 
 /**
@@ -92,5 +95,34 @@ public class User {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(Constants.USER_DATA, gson.toJson(user));
         editor.apply();
+    }
+
+
+    public static User parseUserResponse(Context context,JSONObject jsonObject){
+        User user=new User();
+
+        try {
+            user.setName(jsonObject.getString("name"));
+            user.setEmail(jsonObject.getString("email"));
+            user.setPhone(jsonObject.getString("mobile"));
+            user.setId(jsonObject.getString("_id"));
+
+
+            SharedPreferences sharedPreferences=context.getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
+            sharedPreferences.edit().putBoolean("loggedIn",true)
+                    .apply();
+
+        }catch (JSONException e){
+            e.printStackTrace();
+            return null;
+        }
+
+        return user;
+    }
+
+
+    public static boolean isUserLoggedIn(Context context){
+        SharedPreferences sharedPreferences=context.getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
+        return sharedPreferences.getBoolean("loggedIn", false);
     }
 }

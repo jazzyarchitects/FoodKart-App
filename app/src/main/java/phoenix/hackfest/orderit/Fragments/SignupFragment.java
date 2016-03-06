@@ -103,7 +103,7 @@ public class SignupFragment extends Fragment {
             dataSet.put("mobile", mobile);
             dataSet.put("email", email);
 
-            BackendInterfacer backendInterfacer = new BackendInterfacer(BackendUrls.SIGNUP, "POST", Constants.hashMapToJSON(dataSet, "user"));
+            BackendInterfacer backendInterfacer = new BackendInterfacer(BackendUrls.SIGNUP, "POST", dataSet);
             backendInterfacer.setBackendListener(new BackendInterfacer.BackendListener() {
                 ProgressDialog progressDialog;
 

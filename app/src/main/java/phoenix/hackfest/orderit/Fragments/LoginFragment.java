@@ -94,18 +94,20 @@ public class LoginFragment extends Fragment {
             }
 
             //name, phone, email, password, gender, dob (dd-mm-yyyy),
+            HashMap<String , String> dataSet=new HashMap<>();
+            if(Constants.isValidEmail(email)){
+                dataSet.put("email",email);
+            }else{
+                dataSet.put("mobile",email);
+            }
+            dataSet.put("password",password);
 
-            HashMap<String, String> dataSet = new HashMap<>();
-            dataSet.put("email", email);
-            dataSet.put("password", password);
-
-            BackendInterfacer backendInterfacer = new BackendInterfacer(BackendUrls.LOGIN, "POST", Constants.hashMapToJSON(dataSet, "user"));
+            BackendInterfacer backendInterfacer=new BackendInterfacer(BackendUrls.LOGIN, "POST", dataSet);
             backendInterfacer.setBackendListener(new BackendInterfacer.BackendListener() {
                 ProgressDialog progressDialog;
-
                 @Override
                 public void onPreExecute() {
-                    progressDialog = new ProgressDialog(mContext);
+                    progressDialog=new ProgressDialog(mContext);
                     progressDialog.setIndeterminate(true);
                     progressDialog.setMessage("Logging you in...");
                     progressDialog.show();
@@ -116,11 +118,11 @@ public class LoginFragment extends Fragment {
                     Blogin.post(new Runnable() {
                         @Override
                         public void run() {
-                            if (progressDialog.isShowing()) {
+                            if(progressDialog.isShowing()){
                                 progressDialog.dismiss();
                             }
 
-                            AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+                            AlertDialog.Builder builder=new AlertDialog.Builder(mContext);
                             builder.setMessage(e.getMessage());
                             builder.setTitle("Error");
                             builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
@@ -136,28 +138,29 @@ public class LoginFragment extends Fragment {
 
                 @Override
                 public void onResult(final String result) {
-                    if (progressDialog.isShowing()) {
+                    if(progressDialog.isShowing()){
                         progressDialog.dismiss();
                     }
-                    if (result == null || result.isEmpty()) {
+                    if(result==null || result.isEmpty()){
                         return;
                     }
                     try {
                         JSONObject jsonObject = new JSONObject(result);
-                        if (jsonObject.getBoolean("success")) {
-                            JSONObject data = jsonObject.getJSONObject("data");
-                            User user = User.parseJSONString(data.getJSONObject("detail").toString());
-                            if (user == null) {
+                        if(jsonObject.getBoolean("success")){
+                            JSONObject data=jsonObject.getJSONObject("data");
+                            User user = User.parseUserResponse(getContext(), data.getJSONObject("detail"));
+                            if(user==null){
                                 Toast.makeText(mContext, "Error registering. Please try again", Toast.LENGTH_LONG).show();
                                 return;
                             }
                             User.saveUser(mContext, user);
 
+
                             authenticationListener.onUserAuthenticated();
-                        } else {
-                            AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+                        }else{
+                            AlertDialog.Builder builder=new AlertDialog.Builder(mContext);
                             builder.setTitle("Error");
-                            builder.setMessage(jsonObject.optString("message").replace("_", " "));
+                            builder.setMessage(jsonObject.optString("message").replace("_"," "));
                             builder.setPositiveButton("Try Again", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialogInterface, int i) {
@@ -166,7 +169,7 @@ public class LoginFragment extends Fragment {
                             });
                             builder.show();
                         }
-                    } catch (JSONException e) {
+                    }catch (JSONException e){
                         e.printStackTrace();
                     }
                 }

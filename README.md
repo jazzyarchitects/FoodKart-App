@@ -1,4 +1,5 @@
-* <img src="https://github.com/jazzyarchitects/FoodKart-App/blob/master/Wireframes/hack6.png" alt="icon" height="50px"/>
+<img src="https://github.com/jazzyarchitects/FoodKart-App/blob/master/Wireframes/hack6.png" alt="icon" height="50px"/>
+
 # README #
 
 Android App for hackfest ISM 2016. Will allow user to find people near them to overcome the limitations of minimum order when ordering online from any food marketplace.

@@ -13,8 +13,6 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import java.util.Random;
-
 import phoenix.hackfest.orderit.CustomViews.CheckoutList;
 import phoenix.hackfest.orderit.Dialogs.MyOrderList;
 import phoenix.hackfest.orderit.Models.FoodOrder;
@@ -66,11 +64,13 @@ public class OrderDetails extends AppCompatActivity {
         curTotal=(TextView)findViewById(R.id.curTotal);
         tarAmt=(TextView)findViewById(R.id.tarAmt);
 
-        restName.setText(order.getRestaurent());
-        orderTime.setText(order.getOrderingTime());
-        orderby.setText(order.getAdminName().concat(", ").concat(order.getAdminAddress()));
-        curTotal.setText(order.getCurrentAmount().toString());
-        tarAmt.setText(order.getTargetAmount().toString());
+        if(order!=null) {
+            restName.setText(order.getRestaurent());
+            orderTime.setText(order.getOrderingTime());
+            orderby.setText(order.getAdminName().concat(", ").concat(order.getAdminAddress()));
+            curTotal.setText(order.getCurrentAmount().toString());
+            tarAmt.setText(order.getTargetAmount().toString());
+        }
 
 
 

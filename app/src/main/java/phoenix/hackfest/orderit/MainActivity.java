@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -36,6 +35,10 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        startActivity(new Intent(this, NavigationDrawerActivity.class));
+        finish();
+
         SharedPreferences sharedPreferences= PreferenceManager.getDefaultSharedPreferences(this);
         String token = sharedPreferences.getString(Constants.QuickstartPreferences.REGISTRATION_ID,"");
         Boolean regToServer = sharedPreferences.getBoolean(Constants.QuickstartPreferences.SENT_TOKEN_TO_SERVER,false);
@@ -55,8 +58,8 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                startActivity(new Intent(MainActivity.this, OrderDetails.class));
+
             }
         });
 

@@ -50,7 +50,7 @@ public class RegistrationActivity extends AppCompatActivity implements LoginFrag
         super.onCreate(savedInstanceState);
 
         if(User.isUserLoggedIn(this)){
-            startActivity(new Intent(this, NavigationDrawerActivity.class));
+            startActivity(new Intent(this, MainActivity.class));
             finish();
         }
 
@@ -170,7 +170,7 @@ public class RegistrationActivity extends AppCompatActivity implements LoginFrag
     @Override
     public void onUserAuthenticated() {
         //TODO: Todo
-        startActivity(new Intent(this, NavigationDrawerActivity.class));
+        startActivity(new Intent(this, MainActivity.class));
         finish();
     }
 }

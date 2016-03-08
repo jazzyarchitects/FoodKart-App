@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,15 +46,6 @@ public class UserDetailsFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        parentActivity=(AppCompatActivity)getActivity();
-
-        Toolbar toolbar=(Toolbar)view.findViewById(R.id.toolbar);
-
-        parentActivity.getSupportActionBar().hide();
-        parentActivity.setSupportActionBar(toolbar);
-        parentActivity.getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
-        parentActivity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        parentActivity.getSupportActionBar().setTitle("");
 
         etUserName=(EditText)view.findViewById(R.id.userName);
         etUserMobile=(EditText)view.findViewById(R.id.userMobile);
@@ -65,7 +55,6 @@ public class UserDetailsFragment extends Fragment {
         etYYYY=(EditText)view.findViewById(R.id.userDOByyyy);
         collapsingToolbarLayout=(CollapsingToolbarLayout)view.findViewById(R.id.toolbar_layout);
 
-        toolbar.setTitle("Details");
         User user= User.getUser(mContex);
 
         etUserName.setText(user.getName());

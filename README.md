@@ -1,25 +1,20 @@
-<img src="https://github.com/jazzyarchitects/FoodKart-App/blob/master/Wireframes/hack6.png" alt="icon" height="50px"/>
+# <img src="https://github.com/jazzyarchitects/FoodKart-App/blob/master/Wireframes/hack6.png" alt="icon" height="50px"/> FoodKart
+This is an android application created with an objective to make ordering food more economical for students.  
 
-# README #
+Every restaurant has a minimum order criteria present in order to avail its delivery facilities. We as individuals are forced to satisfy the minimum order criteria even though the order exceeds our appetite.  
 
-Android App for hackfest ISM 2016. Will allow user to find people near them to overcome the limitations of minimum order when ordering online from any food marketplace.
+This app pools enables individuals to pool together orders of various individuals together hence benefiting the individuals.  
 
-### Screenshots ###
-* <img src="https://github.com/jazzyarchitects/FoodKart-App/blob/master/Wireframes/Feed2.png" alt="feed" height="350px"/>
-<img src="https://github.com/jazzyarchitects/FoodKart-App/blob/master/Wireframes/Details.png" alt="details" height="350px"/>
+### Project Repositories
+1. Android Application: https://github.com/jazzyarchitects/FoodKart-App  
+2. Server: https://github.com/code-lucidal58/foodkartServer
 
-### What is this repository for? ###
+### Demo
+<img src="https://github.com/jazzyarchitects/FoodKart-App/blob/master/Wireframes/Feed2.png" alt="feed" height="350px"/>
+<img src="https://github.com/jazzyarchitects/FoodKart-App/blob/master/Wireframes/Details.png" alt="details" height="350px"/>  
+[See in Action](https://drive.google.com/file/d/0B2gfAeWhfmsSN0ZPNDRqdGQ5OG8/view?usp=sharing)
 
-* Repo for the android app
+### How do I get set up?
 
-### How do I get set up? ###
-
-1. Pull Repo
+1. Pull Repository
 2. Android Studio -> Open project -> Point to folder and open it 
-
-### Contribution guidelines ###
-* Don't force push. 
-
-### Who do I talk to? ###
-*Jibin Mathews
-*+91-8877073355

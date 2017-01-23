@@ -12,7 +12,7 @@ This app pools enables individuals to pool together orders of various individual
 ### Demo
 <img src="https://github.com/jazzyarchitects/FoodKart-App/blob/master/Wireframes/Feed2.png" alt="feed" height="350px"/>
 <img src="https://github.com/jazzyarchitects/FoodKart-App/blob/master/Wireframes/Details.png" alt="details" height="350px"/>  
-[See in Action](https://drive.google.com/file/d/0B2gfAeWhfmsSN0ZPNDRqdGQ5OG8/view?usp=sharing)
+[See in Action](https://www.youtube.com/watch?v=U6R2lfiSXoU)
 
 ### How do I get set up?
 
